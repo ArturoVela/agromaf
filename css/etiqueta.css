@@ -1,0 +1,88 @@
+/* Estilos extraídos de etiqueta.html */
+/* Estilos generales y para la impresión */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos para la etiqueta imprimible */
+/* En pantalla permitimos que el contenedor crezca según contenido para evitar cortes */
+#label-container {
+    max-width: 21cm; /* no exceder media hoja para desktop */
+    width: 100%;
+    height: auto; /* permitir crecer con el contenido */
+    box-sizing: border-box;
+    border: 1px dashed #999;
+    padding: 1cm;
+    margin: 2rem auto 0 auto; /* centrado horizontal, pegado hacia arriba */
+    display: block; /* en pantalla no es necesario flex fijo */
+    overflow: visible; /* permitir visualización completa */
+}
+
+/* Ajustar el contenido principal para el sidebar */
+.main-content {
+    margin-left: 280px;
+    min-height: 100vh;
+    background-color: #f9fafb;
+}
+
+/* Mostrar asterisco rojo para labels obligatorios */
+.required-label::after {
+    content: ' *';
+    color: #dc2626; /* rojo (Tailwind red-600) */
+    margin-left: 0.25rem;
+}
+
+/* Ocultar elementos no deseados al imprimir */
+@media print {
+    /* Intentar usar toda la página y quitar márgenes del navegador (donde sea soportado) */
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+    #label-preview, #label-preview * {
+        visibility: visible;
+    }
+    #label-preview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    /* Colocar la etiqueta en la mitad superior de la hoja A4, centrada horizontalmente */
+    #label-container {
+        border: none; /* quitar borde de depuración al imprimir */
+        margin: 0;
+        /* Usar ancho completo de la página y altura = mitad de A4 */
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 14.85cm; /* Exactamente la mitad de una hoja A4 */
+        position: absolute;
+        top: 0; /* pegar al borde superior */
+        transform: none;
+        box-sizing: border-box;
+        padding: 1cm;
+        /* quitar sombras/efectos que hacen parecer una tarjeta recortada */
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        background: white;
+        overflow: visible;
+    }
+    .no-print {
+        display: none;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+}

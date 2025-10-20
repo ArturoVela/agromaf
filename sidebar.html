@@ -1,0 +1,52 @@
+<!-- Botón de menú móvil -->
+<button id="mobile-menu-btn" class="mobile-menu-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+</button>
+
+<!-- Overlay para móviles -->
+<div class="sidebar-overlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <img src="img/Logoagro.jpg" alt="Agromaf Logo" class="sidebar-logo">
+    </div>
+    <div class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+            <h3>Dashboard</h3>
+            <p>Panel principal</p>
+        </a>
+        <!-- Grupo desplegable para Etiquetas -->
+        <div class="nav-group has-submenu">
+            <button type="button" class="nav-item submenu-toggle" aria-expanded="false">
+                <div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+                    <div>
+                        <h3 style="display:inline-block;margin:0">Etiquetas</h3>
+                        <p style="margin:0;opacity:0.8">Generador de etiquetas</p>
+                    </div>
+                    <span class="submenu-caret">></span>
+                </div>
+            </button>
+            <div class="submenu">
+                <a href="etiqueta.html" class="nav-subitem">Etiquetas básicas</a>
+                <a href="etiqueta_formal.html" class="nav-subitem">Etiqueta formal</a>
+            </div>
+        </div>
+        <a href="#" class="nav-item">
+            <h3>Proxi</h3>
+            <p>Proxi</p>
+        </a>
+        <a href="#" class="nav-item">
+            <h3>Proxi</h3>
+            <p>Proxi</p>
+        </a>
+        <a href="#" class="nav-item">
+            <h3>Proxi</h3>
+            <p>Proxi</p>
+        </a>
+    </div>
+</nav>
