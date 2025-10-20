@@ -59,14 +59,14 @@
 }
 
 .nav-item:hover {
-    background-color: #c5e4b9;
+    background-color: #e8f5e9;
     border-left-color: #1B8A3E;
     transform: translateX(5px);
     color: #1B8A3E;
 }
 
 .nav-item.active {
-    background-color: #fef3e7;
+    background-color: #e8f5e9;
     border-left-color: #1B8A3E;
     color: #1B8A3E;
 }
