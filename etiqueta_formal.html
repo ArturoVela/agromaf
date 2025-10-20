@@ -26,57 +26,57 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label for="nro_factura" class="block text-sm font-medium text-gray-700 mb-1 required-label">Nro Factura</label>
-                        <input type="text" id="nro_factura" name="nro_factura" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                        <input type="text" id="nro_factura" name="nro_factura" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                     </div>
                     <div>
                         <label for="nro_orden" class="block text-sm font-medium text-gray-700 mb-1 required-label">Nro Orden</label>
-                        <input type="text" id="nro_orden" name="nro_orden" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                        <input type="text" id="nro_orden" name="nro_orden" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                     </div>
                 </div>
 
                 <div>
                     <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1 required-label">Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                    <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                 </div>
 
                 <div>
                     <label for="dni" class="block text-sm font-medium text-gray-700 mb-1 required-label">DNI / Documento de Identidad</label>
-                    <input type="text" id="dni" name="dni" inputmode="numeric" pattern="\\d{11}" maxlength="11" title="Ingrese exactamente 11 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,11);" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                    <input type="text" id="dni" name="dni" inputmode="numeric" pattern="\\d{11}" maxlength="11" title="Ingrese exactamente 11 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,11);" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                 </div>
 
                 <div>
                     <label for="direccion" class="block text-sm font-medium text-gray-700 mb-1 required-label">Dirección de Entrega</label>
-                    <input type="text" id="direccion" name="direccion" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                    <input type="text" id="direccion" name="direccion" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                 </div>
                 <div>
                     <label for="direccion" class="block text-sm font-medium text-gray-700 mb-1 required-label">Dirección de Entrega</label>
-                    <input type="text" id="direccion" name="direccion" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                    <input type="text" id="direccion" name="direccion" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                 </div>
 
                 <div>
                     <label for="contenido" class="block text-sm font-medium text-gray-700 mb-1 required-label">Contenido del Bulto</label>
-                    <input type="text" id="contenido" name="contenido" placeholder="Ej: Motosierra, FS, BR..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                    <input type="text" id="contenido" name="contenido" placeholder="Ej: Motosierra, FS, BR..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                 </div>
 
                 <!-- Agrupamos Celular, Peso y Bultos en una sola fila (Celular primero) -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                         <label for="celular" class="block text-sm font-medium text-gray-700 mb-1 required-label">Número de Celular</label>
-                        <input type="tel" id="celular" name="celular" inputmode="numeric" pattern="\d{9}" maxlength="9" required title="Ingrese exactamente 9 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,9);" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                        <input type="tel" id="celular" name="celular" inputmode="numeric" pattern="\d{9}" maxlength="9" required title="Ingrese exactamente 9 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,9);" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
                     </div>
 
                     <div>
                         <label for="peso" class="block text-sm font-medium text-gray-700 mb-1 required-label">Peso (kg)</label>
-                        <input type="number" id="peso" name="peso" step="0.1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                        <input type="number" id="peso" name="peso" step="0.1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                     </div>
 
                     <div>
                         <label for="bultos" class="block text-sm font-medium text-gray-700 mb-1 required-label">Número de Bultos</label>
-                        <input type="number" id="bultos" name="bultos" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                        <input type="number" id="bultos" name="bultos" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-transform transform hover:scale-105" style="background-color: #f97316; border-color: #f97316;">Generar Etiqueta Formal</button>
+                <button type="submit" class="w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-transform transform hover:scale-105" style="background-color: 1B8A3E; border-color: 1B8A3E;">Generar Etiqueta Formal</button>
             </form>
         </div>
         </div>
@@ -86,7 +86,7 @@
              <h2 class="text-2xl font-bold mb-4">Vista Previa de la Etiqueta Formal</h2>
              <p class="text-gray-600 mb-4">Usa el botón de imprimir para generar el PDF o enviarlo a tu impresora.</p>
             <button onclick="window.print()" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition mr-2">Imprimir</button>
-            <button onclick="editCurrentLabel()" class="text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition mr-2" style="background-color: #f97316; border-color: #f97316;" onmouseover="this.style.backgroundColor='#ea580c'" onmouseout="this.style.backgroundColor='#f97316'">Editar</button>
+            <button onclick="editCurrentLabel()" class="text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition mr-2" style="background-color: 1B8A3E; border-color: 1B8A3E;" onmouseover="this.style.backgroundColor='#ea580c'" onmouseout="this.style.backgroundColor='1B8A3E'">Editar</button>
             <button onclick="createNewLabel()" class="bg-gray-300 text-gray-800 font-bold py-2 px-6 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition">Crear Nueva Etiqueta</button>
         </div>
 
