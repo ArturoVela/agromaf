@@ -39,10 +39,10 @@
                         id="dni"
                         name="dni"
                         inputmode="numeric"
-                        pattern="\d{8}"
-                        maxlength="8"
-                        title="Ingrese exactamente 8 dígitos numéricos"
-                        oninput="this.value = this.value.replace(/\D/g, '').slice(0,8);"
+                        pattern="\\d{11}"
+                        maxlength="11"
+                        title="Ingrese exactamente 11 dígitos numéricos"
+                        oninput="this.value = this.value.replace(/\D/g, '').slice(0,11);"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition"
                         required
                     >
@@ -118,9 +118,9 @@
             const celular = document.getElementById('celular').value;
             const bultos = document.getElementById('bultos').value;
 
-            // Validar que el DNI tenga exactamente 8 dígitos numéricos
-            if (!/^\d{8}$/.test(dni)) {
-                alert('El DNI debe contener exactamente 8 dígitos numéricos.');
+            // Validar que el DNI tenga exactamente 11 dígitos numéricos
+            if (!/^\d{11}$/.test(dni)) {
+                alert('El DNI debe contener exactamente 11 dígitos numéricos.');
                 document.getElementById('dni').focus();
                 return;
             }
