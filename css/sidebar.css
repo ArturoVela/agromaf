@@ -59,7 +59,7 @@
 }
 
 .nav-item:hover {
-    background-color: #f3f4f6;
+    background-color: #c5e4b9;
     border-left-color: #1B8A3E;
     transform: translateX(5px);
     color: #1B8A3E;
@@ -67,8 +67,8 @@
 
 .nav-item.active {
     background-color: #fef3e7;
-    border-left-color: #f97316;
-    color: #f97316;
+    border-left-color: #1B8A3E;
+    color: #1B8A3E;
 }
 
 .nav-item h3 {
@@ -234,7 +234,7 @@
 
 .nav-group.open .submenu-caret {
     transform: rotate(90deg);
-    color: #f97316;
+    color: #1B8A3E;
 }
 
 /* Estilos para los subitems */
@@ -251,16 +251,16 @@
 }
 
 .nav-subitem:hover {
-    background-color: #f3f4f6;
+    background-color: #e8f5e9;
     border-left-color: #1B8A3E;
     color: #1B8A3E;
     transform: translateX(4px);
 }
 
 .nav-subitem.active {
-    background-color: #fef3e7;
-    border-left-color: #f97316;
-    color: #f97316;
+    background-color: #ecfee7;
+    border-left-color: #1B8A3E;
+    color: #1B8A3E;
 }
 
 /* Asegurar que el botón principal de un grupo tiene apariencia y espaciado similar a .nav-item */
@@ -292,5 +292,5 @@
 
 /* Ajuste del caret dentro del header para mayor contraste cuando está activo */
 .nav-group.open > .submenu-toggle .submenu-caret {
-    color: #f97316;
+    color: #1B8A3E;
 }
