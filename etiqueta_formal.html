@@ -41,7 +41,8 @@
 
                 <div>
                     <label for="dni" class="block text-sm font-medium text-gray-700 mb-1 required-label">DNI / Documento de Identidad</label>
-                    <input type="text" id="dni" name="dni" inputmode="numeric" pattern="\\d{11}" maxlength="11" title="Ingrese exactamente 11 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,11);" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
+                    <!-- Soporta DNI de 8 o 11 dígitos (usar [0-9] para compatibilidad) -->
+                    <input type="text" id="dni" name="dni" inputmode="numeric" pattern="^(?:[0-9]{8}|[0-9]{11})$" maxlength="11" title="Ingrese 8 o 11 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,11).trim();" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" required>
                 </div>
 
                 <div>
@@ -62,7 +63,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                         <label for="celular" class="block text-sm font-medium text-gray-700 mb-1 required-label">Número de Celular</label>
-                        <input type="tel" id="celular" name="celular" inputmode="numeric" pattern="\d{9}" maxlength="9" required title="Ingrese exactamente 9 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,9);" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                        <input type="tel" id="celular" name="celular" inputmode="numeric" pattern="^[0-9]{9}$" maxlength="9" required title="Ingrese exactamente 9 dígitos numéricos" oninput="this.value = this.value.replace(/\D/g, '').slice(0,9).trim();" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
                     </div>
 
                     <div>
@@ -125,9 +126,9 @@
                 document.getElementById('nombre').focus();
                 return;
             }
-            // Validación: DNI debe tener exactamente 11 dígitos
-            if (!/^\d{11}$/.test(dni)) {
-                alert('El DNI debe contener exactamente 11 dígitos numéricos.');
+            // Validación: DNI o RUC puede tener 8 o 11 dígitos
+            if (!/^\d{8}$/.test(dni) && !/^\d{11}$/.test(dni)) {
+                alert('El DNI o RUC debe contener 8 o 11 dígitos numéricos.');
                 document.getElementById('dni').focus();
                 return;
             }
@@ -146,9 +147,9 @@
                 document.getElementById('celular').focus();
                 return;
             }
-            // Validación: DNI debe tener exactamente 11 dígitos
-            if (!/^\d{11}$/.test(dni)) {
-                alert('El DNI debe contener exactamente 11 dígitos numéricos.');
+            // (segunda validación duplicada) Aseguramos 8 o 11 dígitos en caso de que el flujo llegue aquí
+            if (!/^\d{8}$/.test(dni) && !/^\d{11}$/.test(dni)) {
+                alert('El DNI debe contener 8 o 11 dígitos numéricos.');
                 document.getElementById('dni').focus();
                 return;
             }
@@ -184,7 +185,7 @@
                     <div>
                         <p class="text-sm text-gray-500 uppercase font-semibold">DESTINATARIO</p>
                         <p class="font-bold text-3xl">${nombre}</p>
-                        <p class="text-base">DNI: ${dni}</p>
+                        <p class="text-base">${dni.length === 11 ? 'RUC: ' + dni : 'DNI: ' + dni}</p>
                     </div>
                     <div>
                         <p class="text-sm text-gray-500 uppercase font-semibold">DIRECCIÓN</p>
@@ -233,7 +234,11 @@
             const nombreEl = labelContainer.querySelector('.font-bold.text-3xl');
             const nombre = nombreEl ? nombreEl.textContent : '';
             const dniEl = labelContainer.querySelector('.text-base');
-            const dni = dniEl ? dniEl.textContent.replace('DNI: ', '') : '';
+            let dni = '';
+            if (dniEl) {
+                const txt = dniEl.textContent.trim();
+                dni = txt.replace(/^DNI:\s*/i, '').replace(/^RUC:\s*/i, '').trim();
+            }
             const direccionEl = labelContainer.querySelector('.break-words.text-lg');
             const direccion = direccionEl ? direccionEl.textContent : '';
             const contenidoEl = labelContainer.querySelector('.font-semibold.break-words.text-lg');
